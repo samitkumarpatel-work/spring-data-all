@@ -1,0 +1,12 @@
+
+spring:
+  application:
+    name: spring-data-all
+logging:
+  level:
+    sql: trace
+    org:
+      springframework:
+        data:
+          jdbc:
+            core: debug
