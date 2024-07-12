@@ -2,6 +2,11 @@
 spring:
   application:
     name: spring-data-all
+  datasource:
+    url: jdbc:postgresql://localhost:5432/yourdatabase
+    username: sa
+    password: secret
+
 logging:
   level:
     sql: trace
