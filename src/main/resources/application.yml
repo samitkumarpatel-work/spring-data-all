@@ -13,5 +13,4 @@ logging:
     org:
       springframework:
         data:
-          jdbc:
-            core: debug
+          jpa: DEBUG

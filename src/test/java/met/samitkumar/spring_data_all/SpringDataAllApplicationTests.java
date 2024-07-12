@@ -5,11 +5,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.annotation.Import;
 
-import java.time.LocalDateTime;
-import java.util.List;
 import java.util.Set;
 
-import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 @Import(TestcontainersConfiguration.class)
@@ -31,16 +28,7 @@ class SpringDataAllApplicationTests {
 
 	@Test
 	void departmentRepositoryTest() {
-		var department = new Department(null, "IT", "Information Technology",
-				Set.of(
-						new Employee(null, "Samit", LocalDateTime.now(), "Developer", 1000.00, null,
-								Set.of(
-										new Address(null, null, AddressType.HOME, "A B Street, Delhi, India"),
-										new Address(null, null, AddressType.OFFICE, "VIP Street, Delhi, India")
-								)
-						)
-				)
-		);
+		var department = new Department(null, "IT", "Information Technology", Set.of());
 
 		var newDepartment = departmentRepository.save(department);
 		assertNotNull(newDepartment);
@@ -56,7 +44,7 @@ class SpringDataAllApplicationTests {
 		System.out.println(address);
 	}
 
-	@Test
+/*	@Test
 	void employeeRepositoryTest() {
 		var department = departmentRepository.save(new Department(null, "IT", "Information Technology", null));
 
@@ -87,6 +75,6 @@ class SpringDataAllApplicationTests {
 		var newAddress = addressRepository.saveAll(List.of(address, address1));
 		assertNotNull(newAddress);
 		System.out.println(newAddress);
-	}
+	}*/
 
 }

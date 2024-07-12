@@ -1,7 +1,7 @@
 CREATE TABLE IF NOT EXISTS department (
     department_id SERIAL PRIMARY KEY,
     name VARCHAR(100) NOT NULL,
-    description TEXT
+    description VARCHAR(100)
 );
 
 CREATE TABLE IF NOT EXISTS employee (
